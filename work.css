@@ -3,7 +3,7 @@ html, body {
 }
 
 header {
-  z-index: 20;
+  z-index: 1000;
 }
 
 .work-container {
@@ -12,6 +12,7 @@ header {
   height: 100vh;
   width: 100%;
   position: relative;
+  z-index: -1;
 }
 
 .work-container:nth-child(2) {
