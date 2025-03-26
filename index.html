@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COPAI</title>
+
+    <link rel="icon" type="image/svg+xml" href="paipai.png" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="circletype.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="circletype.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+
+    <!-- content script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+
+  </head>
+  <body>
+
+    <!-- cursor -->
+
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+    
+    <!-- Progress -->
+
+    <div class="sp-wrapper">
+      <div class="sp-container" data-scroll="0">
+          <svg class="scroll-progress" width="90" height="90" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <circle class="bg" r="42" cx="45" cy="45" fill="transparent" stroke-dasharray="264" stroke-dashoffset="0" />   
+              <circle class="sp-progress" r="42" cx="45" cy="45" fill="transparent" stroke-dasharray="264" stroke-dashoffset="264" />
+          </svg>
+      </div>
+    </div>
+
+    <!-- Progress Two -->
+
+    <div class="sp-progress">
+      <div></div>
+    </div>
+
+    <!-- Circular Text -->
+
+    <div class="circular-text">
+      <span id="rotated">
+        COPAI | • | DESIGN | • | CODE | • | COPAI | • | DESIGN | • | CODE | • |
+      </span>
+    </div>
+
+    <!-- Nav + About Content -->
+
+    <div class="container">
+
+      <header>
+        <div>
+          <button class="header__button nav-btn-js cursor-scale small" type="button" onclick="myFunction()"></button>
+          <nav class="header__nav nav-js" data-active="false">
+            <ul class="header__menu cursor-scale small">
+              <li class="header__menu-item"><a href="index.html">About</a></li>
+              <li class="header__menu-item"><a href="work.html">Works</a></li>
+              <!-- <li class="header__menu-item"><a href="#">Social Media</a></li>
+              <li class="header__menu-item"><a href="digitalart.html">Digital Arts</a></li> -->
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="reveal_con line">
+        <span><img src="copai.svg" alt="copai-picture"></span>
+        <!-- <span><h1 class="ch">CO <br />PAI</h1></span> -->
+      </div>
+      
+    </div>   
+    
+    <!-- Content Reveal -->
+
+    <!-- Content One -->
+    <ul class="text-end cursor-scale small">
+      <li>
+        <span>A &nbsp; Burmese &nbsp; Freelancer</span>
+      </li>
+      <li>
+        <span>With &nbsp; An &nbsp; Endless &nbsp; Passion &nbsp; On</span>
+      </li>
+      <li>
+        <span>Graphic &nbsp; Design</span>
+      </li>
+    </ul>
+
+    <!-- Content Two -->
+    <ul class="text-start cursor-scale small">
+      <li>
+        <span>I &nbsp; Craft &nbsp; Clean &nbsp; And</span>
+      </li>
+      <li>
+        <span>Functional &nbsp; Designs</span>
+      </li>
+      <li>
+        <span>Inspired &nbsp; By &nbsp; Behance</span>
+      </li>
+      <li>
+        <span>Awwwards &nbsp; And &nbsp; Dribbble</span>
+      </li>
+    </ul>
+
+    <!-- Content Three -->
+    <ul class="text-end-two cursor-scale small">
+      <li>
+        <span>I'm &nbsp; Basically &nbsp; Everywhere</span>
+      </li>
+      <li>
+        <span>So &nbsp; Feel &nbsp; Free &nbsp; To &nbsp; Pick &nbsp; Which</span>
+      </li>
+      <li>
+        <span>Mode &nbsp; of &nbsp; Communication</span>
+      </li>
+      <li>
+        <span>Works &nbsp; For &nbsp; You</span>
+      </li>
+    </ul>
+
+    <!-- Content Email -->
+    <ul class="text-email cursor-scale small" id="hide-this-one">
+      <li>
+        <span><a href="mailto:copai.mm@gmail.com">|@|copai.mm</a></span>
+      </li>
+    </ul>
+
+    <!-- Content Work -->
+    <ul class="text-work cursor-scale small" id="hide-this-two">
+      <li>
+        <span><a href="work.html">Work</a></span>
+      </li>
+    </ul>
+
+    <!-- Content Work -->
+    <ul class="text-footer cursor-scale small">
+      <li><a href="#">TIG</a></li>
+      <li><a href="#">COPAI</a></li>
+      <li><a href="#">LinkedIn</a></li>
+    </ul>
+
+    <!-- Javascript -->
+
+    <script src="main.js"></script>
+    <script src="circletype.min.js"></script>
+
+    <!-- Scroll Javascript -->
+    <script>
+      window.onload = init;
+
+      var progressBar;
+
+      function init() {
+        progressBar = document.querySelector(".sp-progress div");
+
+        window.addEventListener("scroll", function() {
+            var max = document.body.scrollHeight - window.innerHeight;
+            var percent = (window.pageYOffset / max) * 50;
+            progressBar.style.width = percent + "%";
+        });
+      }
+    </script>
+
+  </body>
+</html>
