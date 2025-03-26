@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COPAI</title>
+
+    <link rel="icon" type="image/svg+xml" href="paipai.png" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="circletype.css">
+    <link rel="stylesheet" href="work.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="circletype.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+
+    <!-- content script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+
+    <!-- folio script -->
+    <script src="https://cdn.rawgit.com/bradley/Blotter/master/build/blotter.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Blotter/0.1.0/materials/rollingDistortMaterial.min.js"></script>
+
+  </head>
+  <body>
+
+    <!-- Progress -->
+
+    <div class="sp-wrapper">
+      <div class="sp-container" data-scroll="0">
+          <svg class="scroll-progress" width="90" height="90" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <circle class="bg" r="42" cx="45" cy="45" fill="transparent" stroke-dasharray="264" stroke-dashoffset="0" />   
+              <circle class="sp-progress" r="42" cx="45" cy="45" fill="transparent" stroke-dasharray="264" stroke-dashoffset="264" />
+          </svg>
+      </div>
+    </div>
+
+    <!-- Progress Two -->
+
+    <div class="sp-progress">
+      <div></div>
+    </div>
+
+    <!-- Cursor -->
+
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+
+    <!-- Nav + About Content -->
+
+    <div class="container" id="change-this">
+
+      <header>
+        <div>
+          <button class="header__button nav-btn-js cursor-scale small" type="button" onclick="myFunction()"></button>
+          <nav class="header__nav nav-js" data-active="false">
+            <ul class="header__menu cursor-scale small">
+              <li class="header__menu-item"><a href="index.html">About</a></li>
+              <li class="header__menu-item"><a href="work.html">Works</a></li>
+              <!-- <li class="header__menu-item"><a href="#">Social Media</a></li>
+              <li class="header__menu-item"><a href="digitalart.html">Digital Arts</a></li> -->
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="reveal_con">
+        <div class="cursor-scale small" id="distort-text"></div>
+        <!-- <span><img src="/copai.svg" alt="copai-picture"></span> -->
+        <!-- <span><h1 class="ch">|?|FOLIO</h1></span> -->
+      </div>
+      
+    </div>   
+    
+    <!-- Content Work -->
+
+    <div class='work-container' id="hide-this-one">
+      <h2 class="fadeup one cursor-scale small">KORA <br> Hotel</h2>
+      <div class='reveal'>
+        <div class="image-wrap cursor-scale small">
+          <img src='/kora door 11.jpg'>
+        </div>
+      </div>
+    </div>
+    <div class='work-container' id="hide-this-one">
+      <div class='reveal'>
+        <div class="image-wrap cursor-scale small">
+          <img src='/Kora logo 7.jpg'>
+        </div>
+      </div>
+    </div>
+    <div class='work-container' id="hide-this-one">
+      <div class='reveal'>
+        <div class="image-wrap cursor-scale small">
+          <img src='/kora chair 9.jpg'>
+        </div>
+      </div>
+    </div>
+    <div class='work-container' id="hide-this-two">
+      <h2 class="fadeup two cursor-scale small">ONE GOAL <br> Esports</h2>
+      <div class='reveal'>
+        <div class="image-wrap cursor-scale small">
+          <img src='/OneGoal Cover.jpg'>
+        </div>
+      </div>
+    </div>
+    <div class='work-container' id="hide-this-one">
+      <div class='reveal'>
+        <div class="image-wrap cursor-scale small">
+          <img src='/OneGoal Poster Two.jpg'>
+        </div>
+      </div>
+    </div>
+    <div class='work-container' id="hide-this-two">
+      <h2 class="fadeup two cursor-scale small">TIMMY <br> Music</h2>
+      <div class='reveal'>
+        <div class="image-wrap cursor-scale small">
+          <img src='/Timmy Cover.jpg'>
+        </div>
+      </div>
+    </div>
+    <div class='work-container' id="hide-this-one">
+      <div class='reveal'>
+        <div class="image-wrap cursor-scale small">
+          <img src='/Timmy Art Direction.jpg'>
+        </div>
+      </div>
+    </div>
+    <div class='work-container' id="hide-this-three">
+      <h2 class="fadeup three cursor-scale small">TIG <br> Sportswear</h2>
+      <div class='reveal'>
+        <div class="image-wrap cursor-scale small">
+          <img src='/TIG Cover.jpg'>
+        </div>
+      </div>
+    </div>
+    <div class='work-container' id="hide-this-one">
+      <div class='reveal'>
+        <div class="image-wrap cursor-scale small">
+          <img src='/TIG Cover - 1st.jpg'>
+        </div>
+      </div>
+    </div>
+    <div class='work-container'id="hide-this-four">
+      <h2 class="fadeup four cursor-scale small">Let's <br> Work </h2>
+      <div class='reveal'>
+        <div class="image-wrap cursor-scale small">
+          <img src='/lets-work-ps.jpg'>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Work -->
+    <ul class="text-work cursor-scale small" id="hide-this-five">
+      <li>
+        <span><a href="index.html">About</a></span>
+      </li>
+    </ul>
+
+    <!-- Content Work -->
+    <ul class="text-footer cursor-scale small">
+      <li><a href="#">TIG</a></li>
+      <li><a href="#">COPAI</a></li>
+      <li><a href="#">LinkedIn</a></li>
+    </ul>
+
+    <!-- Javascript -->
+
+    <script src="work.js"></script>
+
+    <script>
+      // Nav Content
+
+      document.addEventListener("DOMContentLoaded", () => {
+          const revealerNav = window.revealer({
+              revealElementSelector: ".nav-js",
+              options: {
+                  anchorSelector: ".nav-btn-js",
+              },
+          });
+
+          const actionBtn = document.querySelector(".nav-btn-js");
+          actionBtn.addEventListener("click", () => {
+              if (!revealerNav.isRevealed()) {
+                  revealerNav.reveal();
+                  actionBtn.setAttribute("data-open", true);
+              } else {
+                  revealerNav.hide();
+                  actionBtn.setAttribute("data-open", false);
+              }
+          });
+      });
+
+      // Hide Content
+
+      function myFunction() {
+        
+        var elementOne = document.getElementById("hide-this-one");
+        elementOne.classList.toggle("hide-content-one");
+
+        var elementTwo = document.getElementById("hide-this-two");
+        elementTwo.classList.toggle("hide-content-two");
+
+        var elementThree = document.getElementById("hide-this-three");
+        elementThree.classList.toggle("hide-content-three");
+
+        var elementFour = document.getElementById("hide-this-four");
+        elementFour.classList.toggle("hide-content-four");
+
+        var elementFive = document.getElementById("hide-this-five");
+        elementFive.classList.toggle("hide-content-five");
+
+        var elementFive = document.getElementById("change-this");
+        elementFive.classList.toggle("change-height");
+      }
+
+      // Folio Script
+
+      let Size = 0.001;
+      
+
+            function increaseSize(value) {
+
+                var elem = document.getElementById("distort-text");
+                var text = new Blotter.Text("PAIFOLIO", {
+                    family: "Trud Type ",
+                    weight: 100,
+                    size: 150,
+                    fill: "#c6e421"
+                });
+
+                text.needsUpdate = true;
+                var material = new Blotter.RollingDistortMaterial();
+
+                material.uniforms.uSineDistortAmplitude.value = 0.04;
+
+                var blotter = new Blotter(material, {
+                    texts: text
+                });
+
+                var scope = blotter.forText(text);
+
+                scope.appendTo(elem);
+
+                Size += 0.001;
+                
+            }
+            
+            
+            increaseSize();
+
+            // Progress
+            window.onload = init;
+
+            var progressBar;
+
+            function init() {
+              progressBar = document.querySelector(".sp-progress div");
+
+              window.addEventListener("scroll", function() {
+                  var max = document.body.scrollHeight - window.innerHeight;
+                  var percent = (window.pageYOffset / max) * 50;
+                  progressBar.style.width = percent + "%";
+              });
+            }    
+
+            // Progress Onw
+
+            (function(){
+              "use strict"
+              
+              const progress = document.querySelector('.sp-progress');
+              const container = document.querySelector('.sp-container');
+              const docHeight = document.body.scrollHeight - window.innerHeight;
+              window.addEventListener('scroll', setScrollPerc);
+              
+              function setScrollPerc() {
+                let top = window.pageYOffset || document.documentElement.scrollTop;
+                let perc = Math.ceil(top*100/docHeight);
+                container.setAttribute('data-scroll', perc);
+                progress.style.strokeDashoffset = 264 - (perc/100*264);
+              }
+            })()
+    </script>
+
+  </body>
+</html>
