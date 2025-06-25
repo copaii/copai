@@ -1,0 +1,423 @@
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+  }
+html {
+  scroll-behavior: smooth;
+}
+  @font-face {
+    font-family: MonumentExtended;
+    src: url(Fonts/PPMonumentExtended-Black.otf);
+  }
+
+  .monument {
+    font-family: 'MonumentExtended';
+  }
+
+  @font-face {
+    font-family: NewMontreal;
+    src: url(Fonts/NeueMontreal-Regular.otf);
+  }
+
+  .montreal {
+    font-family: 'NewMontreal';
+  }
+
+  .m-0 {
+    margin: 0 !important;
+  }
+
+  .section-divider-container {
+    margin: 40px 16px 0px 16px;
+  }
+  .section-divider-container-text {
+    margin: 0px 16px 10px 16px;
+  }
+
+  .section-divider-start {
+    position: relative;
+    height: 10px; /* Thin height */
+    border-top: 1px solid #333; /* Top border */
+    border-left: 1px solid #333; /* Left border */
+  }
+
+  .section-divider-middle {
+    position: relative;
+    height: 10px; /* Thin height */
+    border-top: 1px solid #333; /* Top border */
+    border-left: 1px solid #333; /* Left border */
+    border-right: 1px solid #333; /* Right border */
+  }
+
+  .section-divider-end {
+    position: relative;
+    height: 10px; /* Thin height */
+    border-top: 1px solid #333; /* Top border */
+    border-right: 1px solid #333; /* Right border */
+  }
+
+  .section-divider-text {
+    position: relative;
+    font-size: 12px;
+  }
+
+  .section-divider-circle-text {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transform: translate(-2px, 0px); /* Adjust vertical position */
+  }
+
+  .circle-in-text {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  /* CTA Button */
+
+  .cta-wrapper{
+    display: inline-block;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px 5px 5px 5px;
+  border-bottom-right-radius: 15px;
+  cursor: pointer;
+}
+
+.cta {
+  display: flex;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .5s;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+
+.cta-container {
+  display: flex;
+}
+
+.cta-container:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 100%;
+  opacity: 0.5;
+  background: #414141;
+  transition: all .35s;
+  z-index: -1;
+  border-bottom-right-radius: 10px;
+}
+
+.cta-container-contact:after {
+  position: absolute;
+  content: "";
+  top: -5px;
+  right: -5px;
+  width: 46px;
+  height: 45px;
+  opacity: 0.5;
+  background: #414141;
+  transition: all .35s;
+  z-index: -1;
+  border-bottom-right-radius: 10px;
+}
+
+.text-cta {
+  position: relative; /* Required for positioning the ::after element */
+    display: inline-block; /* Ensures the underline matches the text width */
+    padding: 3px 22px 0px 8px;
+}
+
+.text-cta::after {
+    content: '';
+    position: absolute;
+    margin: 0px 0px 3px 8px;
+    bottom: 0; /* Position the underline at the bottom of the text */
+    left: 0;
+    width: 0; /* Start with no width */
+    height: 1px; /* Thickness of the underline */
+    background-color: white; /* Color of the underline */
+    transition: width 0.3s ease; /* Smooth animation */
+  }
+  .cta-wrapper:hover .text-cta-about::after {
+    width: 75%;
+  }
+
+  .cta-wrapper:hover .text-cta-work::after {
+    width: 68%;
+  }
+
+  .cta-wrapper:hover .text-cta-msg::after {
+    width: 78%;
+  }
+
+.arrow-cta {
+   padding: 10px 11px 0px 10px;
+  font-size: 14px;
+  color: #FD3C00;
+}
+
+.cta:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 100%;
+  background: #414141;
+  transition: all .35s;
+  z-index: -10;
+  border-bottom-right-radius: 10px;
+}
+
+.cta-wrapper:hover .arrow-cta{
+  color: #fff;
+}
+
+.cta-wrapper:hover .cta:after{
+  width: 100%;
+  background: #FD3C00;
+}
+
+
+    /* Drawer styles using checkbox hack */
+    #drawer-toggle:checked ~ #drawer {
+      transform: translateX(0);
+    }
+
+    #drawer {
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(100%);
+    }
+
+    /* Overlay when drawer is open */
+    #drawer-toggle:checked ~ #drawer-overlay {
+      display: block;
+    }
+
+    #drawer-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 40;
+    }
+
+    /* Services Section - Responsive stacking for icons and text on mobile */
+    @media (max-width: 767px) {
+    .services-container > div {
+      flex-direction: row !important;
+      flex-wrap: wrap;
+    }
+    .services-container > div > div {
+      width: 50% !important;
+      margin-bottom: 0 !important;
+    }
+    .services-container > div > div:nth-child(2) {
+      width: 100% !important;
+      order: 3;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 767px) {
+  .portfolio-list > div {
+    border-right: 0 !important;
+  }
+  .portfolio-list > div:last-child {
+    border-bottom: 0 !important;
+  }
+}
+  }
+
+  /* Contact Me Button */
+
+  .contact-btn {
+    background: transparent;
+  }
+  .contact-icon {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .contact-text {
+    transform: translate(20%, 0%);
+  }
+  .contact-btn:hover {
+    background: #b12900;
+  }
+  .contact-btn:hover .contact-text-container {
+    background: #FD3C00;
+  }
+  .contact-btn:hover .contact-icon {
+    opacity: 1;
+    visibility: visible;
+  }
+  .contact-btn:hover .contact-text {
+    transform: translate(0%, 0%);
+  }
+
+  /* Animate icon on hover */
+.back-to-top-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.back-to-top-icon {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), opacity 0.2s;
+  will-change: transform, opacity;
+}
+
+.back-to-top-btn:hover {
+  background-color: #FD3C00; /* Change background color on hover */
+  color: white; /* Change text color on hover */
+}
+
+/* On hover: move icon up and fade out, then reset from below and fade in */
+.back-to-top-btn:hover .back-to-top-icon {
+  animation: icon-slide-up-down 0.5s;
+}
+
+@keyframes icon-slide-up-down {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+  41% {
+    transform: translateY(120%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Infinite Text Loop */
+
+
+.text-menu {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	padding: 10px 0px 14px 0px;
+	--marquee-width: 100vw;
+	--offset: 20vw;
+	--move-initial: calc(-25% + var(--offset));
+	--move-final: calc(-50% + var(--offset));
+	--item-font-size: 5vw;
+	counter-reset: menu;
+  background-color: white;
+}
+
+/* Make sure 3 items are visible in the viewport by setting suitable font size. */
+.text-marquee-container {
+  overflow: hidden;
+}
+.text-marquee {
+	top: 0;
+	left: 0;
+	width: var(--marquee-width);
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.text-marquee__inner {
+	width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Fixed gap between items */
+  position: relative;
+	transform: translate3d(var(--move-initial), 0, 0);
+	animation: textmarquee 20s linear infinite;
+	animation-play-state: paused;
+	opacity: 0;
+	transition: opacity 0.1s;
+  gap: 3vw; /* Adjust as needed */
+}
+
+.text-marquee .text-marquee__inner {
+	animation-play-state: running;
+	opacity: 1;
+	transition-duration: 0.4s;
+}
+
+.text-marquee__inner > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-size: 40px;      /* Fixed font size */
+  font-weight: 900;
+  line-height: 1.15;
+  margin: 0 20px;       /* Fixed margin between items */
+  min-width: 0;
+  gap: 16px;            /* Fixed gap between text and image */
+  flex: 0 0 auto;       /* Prevent shrinking/growing */
+}
+
+.text-marquee__inner img {
+  width: 40px;          /* Fixed image width */
+  height: 40px;         /* Fixed image height */
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+  margin-left: 70px;
+  transform: rotate(180deg);
+}
+
+@keyframes textmarquee {
+	0% {
+		transform: translate3d(var(--move-initial), 0, 0);
+	}
+
+	100% {
+		transform: translate3d(var(--move-final), 0, 0);
+	}
+}
+
+#left-text, #right-text {
+  will-change: transform;
+}
+
+#preloader {
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+#preloader.preloader-hide {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+#smooth-wrapper {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 1s cubic-bezier(.4,0,.2,1), transform 1s cubic-bezier(.4,0,.2,1);
+}
+#smooth-wrapper.page-in {
+  opacity: 1;
+  transform: translateY(0);
+}

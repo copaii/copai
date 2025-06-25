@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PerfectScents | Branding by COPAI</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Draggable.min.js" integrity="sha512-dgqdovLK5r/NMiV5YfWA0xC94DKGrm+6q1OZpuWHm+uBGLTck6wu58WAX9lmy8wec6cVnsgxbPJ60DtmNFnfgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/InertiaPlugin.min.js" integrity="sha512-PEhxb+AivyFXL3zZnE/TwS4sgWRDZRF7aTGVGkiF7ej++sMKTtN+ZfrEo8lPxrfMIOws/1RkVc1Apua29ktRwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js" integrity="sha512-t4hwZimhnCKT3YLAsEcAcRDkngVFfCcUIfNLIjklrIZAZKD+GfQMP7HbRcsVHxNS48WRBSywNU1uSM2zzLQt1Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="icon" href="Images/copai-favicon.png" type="image/x-icon">
+</head>
+<body class="bg-[#060608] text-[#878787] montreal">
+
+  <!-- Preloader -->
+<div id="preloader" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#060608] w-full p-4 overflow-hidden text-white">
+  <div class="flex flex-col w-full">
+    <div class="flex justify-between">
+      <span id="preloader-count" class="text-4xl md:text-6xl mb-4">0%</span>
+      <span class="text-4xl md:text-6xl mb-4">(Works)</span>
+    </div>
+     <!-- Section Divider -->
+
+    <div class="flex flex-row section-divider-container m-0">
+      <div class="flex-1 section-divider-start"></div>
+      <div class="flex-[2_1_auto] md:flex-[3_1_auto] section-divider-middle"></div>
+    </div>
+    <div class="flex flex-row section-divider-container-text mb-1">
+      <div class="flex items-center flex-1 section-divider-text"> <div class="section-divider-circle-text bg-gray-500"></div> Loading </div>
+      <div class="flex justify-between items-center flex-[2_1] md:flex-[3_1] py-2 section-divider-text">
+        <div class="flex items-center">
+          <div class="section-divider-circle-text bg-gray-500"></div>
+          <div>(PerfectScents)</div>
+        </div>
+        <div>
+          ©ကိုပိုင်
+        </div>
+      </div>
+    </div>
+
+    <!-- Preloader Bar -->
+    <div class="w-full h-1 bg-[#222] overflow-hidden">
+      <div id="preloader-bar" class="h-full bg-[#FD3C00] w-0"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden checkbox to toggle drawer -->
+<input type="checkbox" id="drawer-toggle" class="hidden" />
+
+<!-- Navbar -->
+<nav id="navbar" class="fixed top-0 left-0 w-full z-30 transition-all duration-300">
+  <div class="mx-auto flex items-start justify-between px-4 py-4">
+    <!-- Logo container -->
+    <div id="logo-container" class="flex items-start justify-start w-5/6 md:w-5/6 transition-all duration-300">
+      <a href="index.html"><img id="logo-img" src="Images/copai-logo-white.png" alt="Logo" class="h-5 md:h-12 object-contain transition-all duration-300" /></a>
+      <!-- Text blocks (hidden on mobile) -->
+      <div class="hidden md:flex flex-row ml-14 select-none space-x-6">
+        <span class="text-sm text-white">+ 	&nbsp; Creative Studio <br> Burmese </span>
+        <span class="text-sm text-white">+ 	&nbsp; Brand Design <br> Web Development</span>
+      </div>
+    </div>
+
+    <!-- Drawer toggle button -->
+    <label for="drawer-toggle" aria-label="Toggle menu" class="text-white inline-flex items-center px-3 py-1 rounded bg-[#222] cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-300"> 
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+      <span class="ml-1 text-white" >MENU</span>
+    </label>
+  </div>
+</nav>
+
+<!-- Drawer -->
+<aside id="drawer" class="fixed top-0 right-0 z-50 h-full w-full sm:w-2/3 md:w-1/2 bg-[#060608] p-6 shadow-lg">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-xl font-semibold">Copai Studio</h2>
+    <!-- Close button -->
+    <label for="drawer-toggle" aria-label="Close menu" class="text-white hover:text-[#FD3C00] cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-300 rounded">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </label>
+  </div>
+  
+  <div class="flex flex-row section-divider-container m-0">
+    <div class="flex-[2_1_auto] md:flex-[3_1_auto] section-divider-middle"></div>
+  </div>
+  <div class="flex flex-row section-divider-container-text m-0">
+    <div class="flex justify-between items-center flex-[2_1] md:flex-[3_1] py-2 section-divider-text">
+      <div class="flex items-center">
+        <div class="section-divider-circle-text bg-gray-500"></div>
+        <div>(Menu)</div>
+      </div>
+      <div>
+        မီနူး
+      </div>
+    </div>
+  </div>
+  <nav class="mt-4">
+    <ul class="border border-[#333] rounded-2xl">
+      <li>
+        <a href="index.html" class="block hover:text-[#FD3C00] py-5 border-b border-[#333] flex items-center justify-between px-5"> 
+          <span>
+            <span class="mr-5 text-[#FD3C00]">/01</span> <span class="monument uppercase">Home</span> 
+          </span>
+          <span class="w-1 h-1 bg-[#6B7280] rounded-full"></span> 
+        </a>
+      </li>
+      <li>
+        <a href="about.html" class="block hover:text-[#FD3C00] py-5 border-b border-[#333] flex items-center justify-between px-5"> 
+          <span>
+            <span class="mr-5 text-[#FD3C00]">/02</span> <span class="monument uppercase">About</span>  
+          </span>
+          <span class="w-1 h-1 bg-[#6B7280] rounded-full"></span> 
+        </a>
+      </li>
+      <li>
+        <a href="works.html" class="block hover:text-[#FD3C00] py-5 border-b border-[#333] flex items-center justify-between px-5"> 
+          <span>
+            <span class="mr-5 text-[#FD3C00]">/03</span> <span class="monument uppercase">Works</span>  
+          </span>
+          <span class="w-1 h-1 bg-[#FD3C00] rounded-full"></span> 
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" class="block hover:text-[#FD3C00] py-5 flex items-center justify-between px-5"> 
+          <span>
+            <span class="mr-5 text-[#FD3C00]">/04</span> <span class="monument uppercase">Contact</span>  
+          </span>
+          <span class="w-1 h-1 bg-[#6B7280] rounded-full"></span> 
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+
+<!-- Overlay -->
+<label for="drawer-toggle" id="drawer-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 cursor-pointer hidden"></label>
+
+<!-- Spacer for Navbar height -->
+<div class="h-24 md:h-24"></div>
+
+<div id="smooth-wrapper">
+  <div id="smooth-content">
+
+    <!-- First Section -->
+<section class="mx-auto flex flex-col md:flex-row px-4 pt-12 md:pt-20 w-full">
+  
+</section>
+
+    <div class="bg-[#060608] pt-1 mt-12">
+
+      <!-- Work COVER Section -->
+<section class="worklist-container px-4 mt-12">
+  <div class="project-item flex flex-col mt-10">
+    <div class="flex works-images gap-2 reveal-fade">
+      <div class="w-2/3 bg-gray-500 rounded-lg">
+        <img src="Images/perfectscents-1.png" alt="" class="rounded-lg w-full h-full object-cover">
+      </div>
+      <div class="w-1/3 bg-gray-600 rounded-lg">
+        <img src="Images/perfectscents-6.png" alt="" class="rounded-lg w-full h-full object-cover">
+      </div>
+    </div>
+    <div class="flex works-badges justify-between mt-3 text-sm md:text-base reveal-fade">
+      <div class="flex items-center gap-2">
+        <p class="border px-[10.5px] md:px-[12px] py-1 border-[#333] rounded-full">6</p>
+      </div>
+      <div class="flex">
+        <p class="border px-4 py-1 border-[#333] rounded-2xl">Branding</p>
+        <p class="border px-4 py-1 border-[#333] rounded-2xl">Logo Design</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Section Divider -->
+
+<div class="flex flex-row section-divider-container">
+  <div class="flex-1 section-divider-start"></div>
+  <div class="flex-[2_1_auto] md:flex-[3_1_auto] section-divider-middle"></div>
+</div>
+<div class="flex flex-row section-divider-container-text mb-12">
+  <div class="flex items-center flex-1 section-divider-text"> <div class="section-divider-circle-text bg-gray-500"></div> Proj/06 </div>
+  <div class="flex justify-between items-center flex-[2_1] md:flex-[3_1] py-2 section-divider-text">
+    <div class="flex items-center">
+      <div class="section-divider-circle-text bg-gray-500"></div>
+      <div>(Works Detail)</div>
+    </div>
+    <div>
+      ©ကိုပိုင်
+    </div>
+  </div>
+</div>
+
+<!-- Second Section -->
+<section id="about" class="mx-auto flex flex-col flex-col-reverse md:flex-row px-4 space-y-2 items-end">
+  <!-- Left text -->
+  <div class="w-full text-left monument text-[#DFDFDF] reveal-fade">
+    <h2 class="text-4xl sm:text-7xl mb-[-12px] md:mb-[-18px]">PERFECT</h2>
+    <h2 class="text-4xl sm:text-7xl">SCENTS</h2>
+  </div>
+  <!-- Right text -->
+  <!-- <div class="w-full md:text-right monument pb-1 md:pb-0">
+    <h2 class="text-5xl md:text-7xl mb-[-12px] md:mb-[-18px]">/11</h2>
+  </div> -->
+</section>
+
+<!-- Section Divider -->
+
+<div class="flex flex-row section-divider-container">
+  <div class="flex-1 section-divider-start"></div>
+  <div class="flex-[2_1_auto] md:flex-[3_1_auto] section-divider-middle"></div>
+</div>
+<div class="flex flex-row section-divider-container-text mb-12">
+  <div class="flex items-center flex-1 section-divider-text"> <div class="section-divider-circle-text bg-gray-500"></div> (Project Brief) </div>
+  <div class="flex justify-between items-center flex-[2_1] md:flex-[3_1] py-2 section-divider-text">
+    <div class="flex items-center">
+      <div class="section-divider-circle-text bg-gray-500"></div>
+      <div>Based</div>
+    </div>
+    <div>
+      @the United States
+    </div>
+  </div>
+</div>
+<!-- Work lists Section -->
+<section class="worklist-container px-4 mt-12 flex flex-col md:flex-row gap-2">
+  <div class="w-full md:w-1/3">
+    <div class="text-block reveal-fade">
+      <p> <i class="fa-solid fa-circle text-[8px] align-[3px] mr-3"></i>Perfect Scents Boutique crafts experiences taht transcend scent, curating moments of mindful luxury for home and body. Their logo is the sould of their story, a circular emblem where "PERFECT" and "SCENTS" elegantly encircle a candle's gentle flame. It is a symbol of balance and craftsmanship, it anchors their identity in simplicity and purpose.</p>
+    </div>
+    <div class="flex text-sm md:text-base flex-wrap reveal-fade">
+      <p class="border px-4 py-1 border-[#333] rounded-2xl mt-2">Brand identity Design</p>
+      <p class="border px-4 py-1 border-[#333] rounded-2xl mt-2">Stationary Design</p>
+    </div>
+  </div>
+  <div class="w-full md:w-2/3">
+    <div class="project-item flex flex-col mt-1">
+      <div class="flex works-images gap-2">
+        <div class="w-full bg-gray-500 rounded-lg reveal-fade">
+          <img src="Images/perfectscents-4.png" alt="" class="rounded-lg w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-item flex flex-col mt-3">
+      <div class="flex works-images gap-2">
+        <div class="w-full bg-gray-500 rounded-lg reveal-fade">
+          <img src="Images/perfectscents-3.png" alt="" class="rounded-lg w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item flex flex-col mt-3">
+      <div class="flex works-images gap-2">
+        <div class="w-full bg-gray-500 rounded-lg reveal-fade">
+          <img src="Images/perfectscents-5.png" alt="" class="rounded-lg w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-item flex flex-col mt-3">
+      <div class="flex works-images gap-2">
+        <div class="w-full bg-gray-500 rounded-lg reveal-fade">
+          <img src="Images/perfectscents-2.png" alt="" class="rounded-lg w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item flex flex-col mt-3">
+      <div class="flex works-images gap-2">
+        <div class="w-full bg-gray-500 rounded-lg reveal-fade">
+          <img src="Images/perfectscents-1.png" alt="" class="rounded-lg w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Text Marquee -->
+
+<div class="text-marquee-container mt-12">
+  <div class="text-menu">
+    <div class="text-menu__item">
+      <div class="text-marquee">
+        <div class="text-marquee__inner text-black">
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+          <div class="flex items-center justify-evenly">
+            <div class="marquee-text-img inline-block text-5xl monument">COPAI STUDIO</div>
+            <img class="" src="Images/arrow-right.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Us -->
+
+    <section
+    class="w-full bg-cover bg-center pb-3 pt-16 px-4 flex flex-col"
+    style="background-image: url('Images/cover-one.png'); background-size: cover;"
+    >
+
+    <!-- First Row: Text -->
+    <div class="w-full max-w-2xl mb-40 text-left">
+        <h2 class="text-2xl md:text-4xl text-white drop-shadow-lg flex items-center gap-2 reveal-fade">
+        <i class="fa-solid fa-circle text-xs md:text-base"></i>
+        Ready to elevate your brand?
+        </h2>
+        <p class="text-2xl md:text-4xl text-[#FFFFFF99] drop-shadow reveal-fade">
+        Drop us a line, and let’s create something extraordinary together.
+        </p>
+    </div>
+    <!-- Second Row: Button and Text -->
+    <div class="w-full flex flex-col mt-40 md:flex-row-reverse md:justify-between md:items-end gap-4">
+        
+        <!-- Text (right on desktop, top on mobile) -->
+        <div class="text-white text-3xl md:text-4xl lg:text-6xl md:text-right monument">
+        <div class="mb-[-12px]">LET'S BRING </div>
+        <div class="mb-[-12px]">YOUR IDEAS </div>
+        <div>TO LIFE</div>
+        </div>
+        <!-- Button (left on desktop, bottom on mobile) -->
+        <a
+        href="contact.html"
+        class="contact-btn border border-[#333] px-2 py-2 w-full md:max-w-[350px] rounded-full hover:text-white transition duration-300"
+        >
+        <span>
+            <span class="contact-text-container flex items-center justify-center gap-4 px-14 py-2 rounded-full transition duration-300">
+            <p class="contact-text transition duration-300">Contact Us</p>
+            <p class="contact-icon transition duration-300">
+                <i class="fa-solid fa-arrow-right"></i>
+            </p>
+            </span>
+        </span>
+        </a>
+    </div>
+    </section>
+
+<!-- Footer -->
+
+    <section class="px-4 mt-2 mb-2 md:mt-12">
+    <div class="flex flex-col md:flex-row md:items-start justify-between">
+        
+        <!-- Middle Title & Paragraph -->
+        <div class="w-full md:w-4/5">
+        <!-- Section Divider -->
+
+        <div class="hidden md:flex flex-row">
+            <div class="flex-1 section-divider-start"></div>
+            <div class="flex-1 section-divider-start"></div>
+            <div class="flex-1 section-divider-start"></div>
+        </div>
+        <div class="hidden md:flex flex-row">
+            <div class="flex items-center flex-1 section-divider-text"> <div class="section-divider-circle-text bg-gray-500"></div> MM/TH </div>
+            <div class="flex items-center flex-1 section-divider-text"> <div class="section-divider-circle-text bg-gray-500"></div> Get In Touch </div>
+            <div class="flex items-center flex-1 section-divider-text"> <div class="section-divider-circle-text bg-gray-500"></div> Contact </div>
+        </div>
+        <br class="hidden md:block"><br class="hidden md:block">
+        <div class="flex flex-col md:flex-row md:border-b border-[#333] md:pb-[11px] text-base">
+            <div class="flex-1 mb-8 md:mb-0">
+            <h3 class="md:hidden text-sm">(Contact)</h3>  
+            <a href="mailto:copaistudio@outlook.com" class="text-white opacity-70 text-lg md:text-base">copaistudio@outlook.com</a>
+            <p class="text-white opacity-70 text-lg md:text-base">+66621200782</p>
+            </div>
+            <div class="flex-1 mb-8 md:mb-0">
+            <h3 class="md:hidden text-sm">(Find us)</h3>  
+            <p class="text-white opacity-70 text-lg md:text-base">Bangkok, Thailand</p>
+            <p class="text-white opacity-70 text-lg md:text-base">Yangon, Myanmar</p>
+            </div>
+            <div class="flex flex-col flex-1 md:flex-row md:gap-3 mb-4 md:mb-0">
+            <h3 class="md:hidden text-sm">(Reach us)</h3>
+            <a href="mailto:copaistudio@outlook.com" class="block text-white opacity-70 text-sm md:text-base mb-1 md:mb-0"><span class="md:hidden mr-2">&#8226;</span> Mail</a>  
+          <a href="https://www.linkedin.com/in/paing-htet-aung-181477236?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="block text-white opacity-70 text-sm md:text-base mb-1 md:mb-0"><span class="md:hidden mr-2">&#8226;</span> Linkedin</a>
+          <a href="https://www.behance.net/copaistudio" class="block text-white opacity-70 text-sm md:text-base mb-1 md:mb-0"><span class="md:hidden mr-2">&#8226;</span> Behance</a>
+            </div>
+        </div>
+        </div>
+        <!-- Placeholder Div -->
+        <div class="w-1/2 md:w-1/5 hidden md:flex flex-col justify-end items-end mb-4 md:mb-0 md:p-[10px] border border-[#333]">
+        <br class="hidden md:block"><br class="hidden md:block"><div class="py-1"></div>
+        <!-- Back to top -->
+        <a href="#" class="px-5 py-4 rounded-full border border-[#333] back-to-top-btn transition duration-300">
+            <i class="fa-solid fa-arrow-up back-to-top-icon"></i>
+        </a>
+        </div>
+    </div>
+    </section>
+
+<!-- Copyright -->
+
+    <section class="px-4 pb-3 flex justify-between text-sm border-t border-[#333] md:border-t-0 pt-3 md:pt-0">
+    <div class="hidden md:block">YGN | BKK</div>
+    <div>© CopaiStudio 2025. All rights reserved</div>
+    </section>
+  </div>
+    
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+// create the smooth scroller FIRST!
+let smoother = ScrollSmoother.create({
+  smooth: 2,
+  effects: true,
+  normalizeScroll: true
+});
+
+</script>
+</body>
+</html>
