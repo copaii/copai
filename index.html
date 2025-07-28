@@ -18,6 +18,35 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="icon" href="Images/copai-favicon.png" type="image/x-icon">
 
+<!--  Swiper Slider  -->
+
+  <link href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' rel='stylesheet'/>
+   <style>
+    .swiper-button-prev,
+    .swiper-button-next {
+      min-width: 80px;
+      padding: 8px 20px;
+      font-size: 1rem;
+      border-radius: 25px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #333;
+      background: #111;
+    }
+    .swiper-button-prev:disabled,
+    .swiper-button-next:disabled { opacity: 0.35; cursor: default; }
+    
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      display: none;
+    }
+   </style>
+
 <!--  Spline  -->
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.12/build/spline-viewer.js"></script>
 </head>
@@ -141,6 +170,14 @@
             <span class="mr-5 text-[#FD3C00]">/03</span> <span class="monument uppercase">Works</span>  
           </span>
           <span class="w-1 h-1 bg-[#6B7280] rounded-full"></span> 
+        </a>
+      </li>
+      <li>
+        <a class='block hover:text-[#FD3C00] py-5 border-b border-[#333] flex items-center justify-between px-5' href='https://insights.copaistudio.com/'> 
+          <span>
+            <span class='mr-5 text-[#FD3C00]'>/04</span> <span class='monument uppercase'>Insights</span>  
+          </span>
+          <span class='w-1 h-1 bg-[#6B7280] rounded-full'/> 
         </a>
       </li>
       <li>
@@ -446,6 +483,173 @@
           <p class="border px-8 py-1 border-[#333] rounded-2xl">Plan & grow</p>
         </div>
         <div class="circle-in-text bg-gray-500 p-[5px]"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Insights/Blog -->
+
+<!-- Section Divider -->
+
+<div class="flex flex-row section-divider-container">
+  <div class="flex-1 section-divider-start"></div>
+  <div class="flex-[2_1_auto] md:flex-[3_1_auto] section-divider-middle"></div>
+</div>
+<div class="flex flex-row section-divider-container-text">
+  <div class="flex items-center flex-1 section-divider-text"> <div class="section-divider-circle-text bg-gray-500"></div> Read </div>
+  <div class="flex justify-between items-center flex-[2_1] md:flex-[3_1] py-2 section-divider-text">
+    <div class="flex items-center">
+      <div class="section-divider-circle-text bg-gray-500"></div>
+      <div>(Insights/Blog)</div>
+    </div>
+    <div>
+      Learn
+    </div>
+  </div>
+</div>
+
+<section class="my-10 w-full px-4">
+  <h2 class="text-3xl text-white mb-2">Insights</h2>
+  <p class="text-base mb-2">No fluff, no fake formulas; just real insight and inspiration for designers who give a damn. If you're building brands that matter, you're in the right place.</p>
+  <p class="mb-5">
+    <a class="border-b border-[#333] pb-1" href="https://insights.copaistudio.com/">
+                READ ALL ARTICLES
+                          <span class="p-[5px]">
+    <i class="fa-solid fa-arrow-right fa-sm"></i>
+    </span>
+    </a>
+  </p>
+  <div>
+    <div class="swiper mySwiper pb-[25px]">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide w-full max-w-xs md:w-[360px] relative">
+          <div class="overflow-hidden">
+            <a href="https://insights.copaistudio.com/2025/07/the-ultimate-guide-to-building-brand.html">
+              <img alt="Post 1 Title" class="w-full h-52 object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqbAnO7SowVzTDM-mD-DxbTLv8W_ad4B6TRqaXAXCd5PP05sGfh9tvXNlxKVdqKqaJY-YcCg-HOcpbiUk2VBMmX9TfahLCZOU_m-U3KYhwER-g4m9FqaEplx3GPHDQhyukWjfm44PUgdT7ysgW8OEKlfmoxnZGyGIzawIYLQLLEO0UYSqdlL6JEdBxgkg/s600-c/19.png"/>
+            </a>
+            <div class="pt-2">
+              <h3 class="text-lg text-white mb-2 min-h-[52px]">
+                <a href="https://insights.copaistudio.com/2025/07/the-ultimate-guide-to-building-brand.html">The Ultimate Guide to Building a Brand Strategy That Grows Your Business</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat .swiper-slide as needed -->
+        <div class="swiper-slide w-full max-w-xs md:w-[360px]">
+          <div class="overflow-hidden">
+            <a href="https://insights.copaistudio.com/2025/07/the-key-to-building-brand-people-truly.html">
+              <img alt="Post 2 Title" class="w-full h-52 object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMpMhaKCYFB20Ae03JwuUILTLJFdk4eoVnWhG7JSuzKuaYjkdZ31uB_rtCojJjqsNxnFvjzftaNCKFxEOqMscCiGvTFazbMknghr-qWJPauZJujVpTj_MOKxqWfAo8iRE7jxXOjNjA46XOf9v8shh6j9mEqYoicfwB9SnRYOyyRDR_QlO6IClIb7ghR18/s600-c/18.png"/>
+            </a>
+            <div class="pt-2">
+              <h3 class="text-lg text-white mb-2 min-h-[52px]">
+                <a href="https://insights.copaistudio.com/2025/07/the-key-to-building-brand-people-truly.html">The Key to Building a Brand People Truly Connect With</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide w-full max-w-xs md:w-[360px]">
+          <div class="overflow-hidden">
+            <a href="https://insights.copaistudio.com/2025/07/how-vision-culture-and-brand-alignment.html">
+              <img alt="Post 2 Title" class="w-full h-52 object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6GyYBBrNK9vbK4E4B33pWybq0lBtQQk3eN-aBKKoziQ8TdXncvg_XY2KaWceHUl6B0kudKnLa_LW4Au-Ifh6Ri-VJcsttDgcr-vCNIDbJ0SWorC36Yc6HNmfUfJx7hBPSF39Lf_46tBzTz9-pZ0RcxkbKmMbylfIynBHC0xmbZUPXLfg7ZMriSDbNjoA/s600-c/17.png"/>
+            </a>
+            <div class="pt-2">
+              <h3 class="text-lg text-white mb-2 min-h-[52px]">
+                <a href="https://insights.copaistudio.com/2025/07/how-vision-culture-and-brand-alignment.html">How Vision, Culture, and Brand Alignment Drive Lasting Business Success</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide w-full max-w-xs md:w-[360px]">
+          <div class="overflow-hidden">
+            <a href="https://insights.copaistudio.com/2025/07/5-essential-qualities-of-great-logo.html">
+              <img alt="Post 2 Title" class="w-full h-52 object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjws0qYRpJoE63tFMAekkUdIl8Qzi70OgSfr8JdoomhK5c-kZn1BwPo-34cXFqATKwMy-bQDgbvhUEKkZpPx4wuGJjYLdl-b9-99hC4jxwwhensQuebK1Uuf3Hr9XDohzJVJXKeHsVKeZiDJKFc5-cl3gjSffSd54rEB0oKfXyp6YOR_NUjO0vQXDVjkVA/s600-c/16.png"/>
+            </a>
+            <div class="pt-2">
+              <h3 class="text-lg text-white mb-2 min-h-[52px]">
+                <a href="https://insights.copaistudio.com/2025/07/5-essential-qualities-of-great-logo.html">5 Essential Qualities of a Great Logo</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide w-full max-w-xs md:w-[360px]">
+          <div class="overflow-hidden">
+            <a href="https://insights.copaistudio.com/2025/07/what-every-business-must-know-to-win.html">
+              <img alt="Post 2 Title" class="w-full h-52 object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRWW9ZzRXDXKhRdAkBT9DQvoadHUD4elkQ0QBsPPkH4wE8ikTbES14_0KyTXOiHGbDlcnjSWhstg1HEcebzGcb9wzs4MCLdKX8bqEikB9dB0vD-L9tlMAhG6g8LVddD4c6uCecc0SHiixg9Gksmao06bb0266BkvUwJ8lnYhIN7ACaQQR_-dcH8oktUUI/s600-c/15.png"/>
+            </a>
+            <div class="pt-2">
+              <h3 class="text-lg text-white mb-2 min-h-[52px]">
+                <a href="https://insights.copaistudio.com/2025/07/what-every-business-must-know-to-win.html">What Every Business Must Know to Win</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide w-full max-w-xs md:w-[360px]">
+          <div class="overflow-hidden">
+            <a href="https://insights.copaistudio.com/2025/07/what-is-brand-strategy-and-why-it.html">
+              <img alt="Post 2 Title" class="w-full h-52 object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmBQIb187Uak3eis_xleVgtpIMpJqIoZ4eSsQg6n1WflHMmhXqKX7ubZDilDjEccOsFY2NDv9YVLf3eT9xHeLN72pjlyrgEcexRyekXIPb3dW0Z_P3Hkz7QsdhkrF5HSrLCci2W4t9ArH8xIfF4L-6bH-kqove6P0CQV3QMMA_eW1tTokML-yc76NUx7c/s600-c/12.png"/>
+            </a>
+            <div class="pt-2">
+              <h3 class="text-lg text-white mb-2 min-h-[52px]">
+                <a href="https://insights.copaistudio.com/2025/07/what-is-brand-strategy-and-why-it.html">What is Brand Strategy and Why It Matters</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide w-full max-w-xs md:w-[360px]">
+          <div class="overflow-hidden">
+            <a href="https://insights.copaistudio.com/2025/07/why-your-business-is-so-much-more-than.html">
+              <img alt="Post 2 Title" class="w-full h-52 object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifCyW6rdnQ0cTTwJcY13RUnPV8kGLlMmDXyB3c6nvH0IkUtqhKiPc-I3Z9mTqZLoblIcZbA_AXhGI9aVhGNpoop9GLHAcz006aJZ_eR0vJJ8BRd-N2FmFUg_k7VFH3SP4GDFSP55mHgvvE1zFPksHKhGHG56egcWwDV-aVlIQ7zqej7Yc0JbW9fJFrQ1s/s600-c/10.png"/>
+            </a>
+            <div class="pt-2">
+              <h3 class="text-lg text-white mb-2 min-h-[52px]">
+                <a href="https://insights.copaistudio.com/2025/07/why-your-business-is-so-much-more-than.html">Why Your Business Is So Much More Than a Pretty Picture</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide w-full max-w-xs md:w-[360px]">
+          <div class="overflow-hidden">
+            <a href="https://insights.copaistudio.com/2025/07/what-makes-strong-brand.html">
+              <img alt="Post 2 Title" class="w-full h-52 object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjoRbr9F6MQ7HrZH1wjfIviCqk6cUnavXPIVLN9xz4K027jkXj34w9DWCW7_tpH4DEi3oMgn7zi14acTM65TXplzZEP6QFKgTmkym2afN5xC7ZYzJ5eJzP2dZpyzZqMLZmHaOHHjNWlXm0L6XMn-M_IuNciQxV74h6dTA6Zw1H12v9ZNrPW934cHFbQJ9Q/s600-c/7.png"/>
+            </a>
+            <div class="pt-2">
+              <h3 class="text-lg text-white mb-2 min-h-[52px]">
+                <a href="https://insights.copaistudio.com/2025/07/what-makes-strong-brand.html">What Makes a Strong Brand?</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide w-full max-w-xs md:w-[360px]">
+          <div class="overflow-hidden">
+            <a href="https://insights.copaistudio.com/2025/07/what-is-impact-of-branding-on-business.html">
+              <img alt="Post 2 Title" class="w-full h-52 object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiAHtdK02sancgdUEhE4qwUSAK8Hu6hBHCUL0optioznmjUu_t8lk6nL-Bra-AFSwbuKttXf-o5TlqIpPL90jnWgpI5ocOxnnp_nktitrsFOmbXfZJOgtnABEYzsow7K8tzN-umFaQxLUW0G__LTxQ70FJmQkKLX4XzoqFxoWXLJA4Pee8fCh4VVo-MpxU/s600-c/5.png"/>
+            </a>
+            <div class="pt-2">
+              <h3 class="text-lg text-white mb-2 min-h-[52px]">
+                <a href="https://insights.copaistudio.com/2025/07/what-is-impact-of-branding-on-business.html">What Is the Impact of Branding on a Business?</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide w-full max-w-xs md:w-[360px]">
+          <div class="overflow-hidden">
+            <a href="https://insights.copaistudio.com/2025/07/beyond-logo.html">
+              <img alt="Post 2 Title" class="w-full h-52 object-cover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfteIHUkj5A3CHapj_mw6kt9QS2mhCp1ZkRyFn72CBKaxgKWOIrGjpOMqaoVw0UW9J055XzHmqoflStRBib3tSws3ZkYHLlASAjnHoTXWhylLieBf-LrU_Iv0d1Fm4SoQ3Oym1PAkzLpVRtsMKxsE-NfsWnxML7LPIYUw_QWjIOqYAxWD8AlE6_Zr1Ymk/s600-c/1.png"/>
+            </a>
+            <div class="pt-2">
+              <h3 class="text-lg text-white mb-2 min-h-[52px]">
+                <a href="https://insights.copaistudio.com/2025/07/beyond-logo.html">Beyond the Logo</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <!-- Add more slides as needed -->
+      </div>
+      <!-- Swiper navigation (arrows) -->
+      <div class="flex justify-between mt-6 relative z-10 w-full">
+        <button class="swiper-button-prev text-white border border-[#333]">Prev</button>
+        <button class="swiper-button-next text-white border border-[#333]">Next</button>
       </div>
     </div>
   </div>
@@ -925,5 +1129,22 @@ gsap.fromTo("#right-text",
   }
 );
 </script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  new Swiper('.mySwiper', {
+    loop: false,
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+    watchOverflow: true,
+    spaceBetween: 24,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+  
 </body>
 </html>
