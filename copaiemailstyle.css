@@ -1,0 +1,391 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: NewMontreal;
+    src: url(https://copaistudio.com/Fonts/NeueMontreal-Regular.otf);
+}
+
+body {
+    font-family: 'NewMontreal';
+}
+
+.email-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.emailm-frist-bg-section {
+    width: 600px;
+    height: auto;
+    background-image: url(https://copaistudio.com/Images/cover-two.png);
+    background-repeat: no-repeat;
+    background-size: 2000px;
+}
+
+.emailm-marquee {
+  max-width: 600px;
+  overflow: hidden;
+  white-space: nowrap;
+  background: white;
+  color: #000000;
+  padding: 0px 0;
+  font-family: sans-serif;
+  font-size: 18px;
+  height: 50px;
+  text-transform: uppercase;
+  border-bottom: 3px solid #FD3C00;
+}
+
+.emailm-marquee-track {
+  display: inline-flex;
+  gap: 60px;
+  will-change: transform;
+}
+
+.emailm-item {
+  font-family: 'NewMontreal';
+  white-space: nowrap;
+  line-height: 47px;
+}
+
+.emailm-item img {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: cover;
+    transform: rotate(180deg);
+}
+
+.emailm-hero-section {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.emailm-top-logo img {
+    max-width: 300px;
+}
+
+.emailm-top-logo p {
+    font-family: 'NewMontreal';
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.emailm-top-lines {
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+}
+
+.emailm-top-line-1 {
+    max-width: 50%;
+    flex-grow: 1;
+    height: 10px;
+    border-top: 1px solid #878787;
+    border-left: 1px solid #878787;
+    border-right: 1px solid #878787;
+}
+
+.emailm-top-line-2 {
+    max-width: 50%;
+    flex-grow: 1;
+    height: 10px;
+    border-top: 1px solid #878787;
+    border-right: 1px solid #878787;
+}
+
+.emailm-main-title {
+    text-align: center;
+    font-family: 'NewMontreal';
+    color: white;
+    font-size: 55px;
+    line-height: 50px;
+    font-weight:bolder;
+    padding: 20px 0px;
+}
+
+.emailm-sub-title {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-family: 'NewMontreal';
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.emailm-sub-title-box div {
+    max-width: 100%;
+    height: 10px;
+}
+
+.emailm-sub-title-box p {
+    padding: 1px 4px;
+}
+
+.emailm-sub-title-box-special {
+    border-right: 1px solid #FD3C00;
+    border-left: 1px solid #FD3C00;
+}
+
+.emailm-sub-title-box-special p {
+    color: #FD3C00;
+    padding: 1px 4px;
+    background-color: #fd3b001e;
+}
+
+
+.emailm-sub-title-box-special div:first-child {
+    max-width: 100%;
+    height: 10px;
+    border-bottom: 1px solid #FD3C00;
+}
+
+.emailm-sub-title-box-special div:last-child {
+    max-width: 100%;
+    height: 10px;
+    border-top: 1px solid #FD3C00;
+}
+
+.emailm-sub-title-box-blank p {
+    padding: 1px 4px;
+    opacity: 0;
+    margin: 0px -3px;
+}
+
+.emailm-sub-title-box-blank div:first-child{
+    max-width: 100%;
+    height: 10px;
+    border-bottom: 1px solid #FD3C00;
+}
+
+.emailm-sub-title-box-blank div:last-child{
+    max-width: 100%;
+    height: 10px;
+    border-top: 1px solid #FD3C00;
+}
+
+.emailm-buttons {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+.emailm-button-cta {
+    text-decoration: none;
+    color: white;
+    background-color: #FD3C00;
+    padding: 10px 20px;
+    font-family: 'NewMontreal';
+    border-radius: 20px;
+    border: 1px solid white;
+    transition: all 0.3s ease;
+}
+
+.emailm-button-cta:hover {
+    background-color: #fd3b0042;
+    border: 1px solid #FD3C00;
+}
+
+.emailm-first-bg-cover-section {
+    background: linear-gradient(180deg,rgba(18, 18, 18, 0) 0%, rgba(18, 18, 18, 1) 80%);
+}
+
+.emailm-first-bg-cover-first-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: 'NewMontreal';
+    padding: 30px 20px;
+}
+
+.emailm-first-bg-cover-first-section p:first-child {
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.emailm-first-bg-cover-first-section img {
+    max-width: 80%;
+    margin: 20px 0px;
+}
+
+.emailm-first-bg-cover-first-section p:last-child {
+    font-size: 16px;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.emailm-first-bg-cover-second-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: 'NewMontreal';
+    padding: 30px 20px;
+}
+
+.emailm-first-bg-cover-second-section p:first-child {
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.emailm-first-bg-cover-second-section img {
+    max-width: 70%;
+    margin: 20px 0px;
+}
+
+.emailm-first-bg-cover-second-section p:nth-child(3) {
+    font-size: 16px;
+    text-align: center;
+    padding: 0px 20px 20px 20px;
+}
+
+.emailm-first-bg-cover-second-section p:nth-child(4) {
+    font-size: 16px;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.emailm-middle-section {
+    width: 600px;
+    overflow: hidden;
+    color: white;
+    background-color: #121212;
+}
+
+.emailm-middle-frist-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.emailm-middle-frist-section p:first-child {
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.emailm-case-study-icons-texts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.emailm-case-study-icons-texts-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.emailm-case-study-icons-texts-box img {
+    max-width: 20px;
+    margin-right: 10px;
+}
+
+.emailm-case-study-data-images {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    gap: 10px;
+}
+
+.emailm-case-study-data-image-box {
+    width: 100%;
+}
+
+.emailm-case-study-data-image-box img {
+    max-width: 180px;
+}
+
+.emailm-bottom-bg-section {
+    width: 600px;
+    overflow: hidden;
+    color: white;
+    background-color: #121212;
+    background-image: url(https://copaistudio.com/Images/cover-two.png);
+    background-repeat: no-repeat;
+    background-size: 2000px;
+}
+
+.emailm-bottom-price-color {
+    color: #FD3C00;
+}
+
+.emailm-bottom-bg-first-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    text-align: center;
+    background: linear-gradient(0deg,rgba(18, 18, 18, 0) 0%, rgba(18, 18, 18, 1) 80%);
+}
+
+.emailm-bottom-bg-first-section p:first-child {
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.emailm-bottom-cta {
+    padding: 30px 0px;
+}
+
+.emailm-button-cta {
+    text-decoration: none;
+    color: white;
+}
+
+.emailm-bottom-bg-price-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.emailm-bottom-bg-price-image img {
+    width: 100%;
+}
+
+.emailm-bottom-bg-second-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px 30px 20px;
+    text-align: center;
+}
+
+.emailm-bottom-bg-second-section p:first-child {
+    font-size: 55px;
+    padding: 20px 0px 40px 0px;
+    font-weight: bolder;
+    line-height: 50px;
+}
+
+.emailm-bottom-bg-second-section a {
+    text-decoration: none;
+    color: white;
+}
+
+.emailm-bottom-bg-second-section img {
+    max-width: 200px;
+    padding: 40px 0px 10px 0px;
+}
